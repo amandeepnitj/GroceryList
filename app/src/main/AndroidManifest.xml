@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroceryList">
         <activity
+            android:name=".CreateList"
+            android:exported="false" />
+        <activity
+            android:name=".ListView"
+            android:exported="false" />
+        <activity
+            android:name=".DetailView"
+            android:exported="false" />
+        <activity
+            android:name=".Splashscreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

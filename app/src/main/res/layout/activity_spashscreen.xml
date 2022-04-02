@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Splashscreen"
+    android:background="#f85322">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:textSize="40sp"
+        android:text="Grocery List"
+        android:textAlignment="center"
+        android:paddingTop="320sp"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_regular"
+        />
+
+</LinearLayout>
