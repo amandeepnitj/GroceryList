@@ -57,15 +57,15 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
 
 
     @SuppressLint("Range")
-    fun getallData() :ArrayList<ListModel>{
+    fun getallData(value : String) :ArrayList<ListModel>{
         val listarray: ArrayList<ListModel> = ArrayList();
-        val selectquery = "SELECT * FROM " + TABLE;
+        val selectquery = "SELECT * FROM " + TABLE + " where listname = ? ";
         val db = this.readableDatabase;
 
         val cursor : Cursor?
 
         try{
-            cursor = db.rawQuery(selectquery,null);
+            cursor = db.rawQuery(selectquery, arrayOf(value));
 
 
         }

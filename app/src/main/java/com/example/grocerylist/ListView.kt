@@ -14,6 +14,7 @@ class ListView : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView;
     private var adapter: ListviewAdapter? = null;
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_view)
@@ -36,15 +37,22 @@ class ListView : AppCompatActivity() {
             startActivity(intent)
         }
         initView();
-        initRecyclerview()
+        initRecyclerview();
+        var b : Bundle? = intent.extras;
+        var value :String = "";
+        if(b!= null)
+        {
+            value = b.getString("listname").toString();
+
+        }
         sqLitehelper = SQLitehelper(this);
-        getdata();
+        getdata(value);
 
     }
-    fun getdata()
+    fun getdata(value: String)
     {
 
-        val listdata: ArrayList<ListModel> = sqLitehelper.getallData();
+        val listdata: ArrayList<ListModel> = sqLitehelper.getallData(value);
         Log.e("pppp","${listdata.size}")
         adapter?.addItems(listdata)
 

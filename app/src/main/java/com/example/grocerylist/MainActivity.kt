@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -30,6 +31,13 @@ class MainActivity : AppCompatActivity() {
         initrecyclerView();
         sqLitehelper = SQLitehelper(this);
         getmainlistdata();
+        adapter?.setOnClickItem {
+            Toast.makeText(this, it,Toast.LENGTH_SHORT  ).show()
+            val intent = Intent(this@MainActivity, ListView::class.java)
+            var b :Bundle = Bundle();
+            b.putString("listname",it);
+            intent.putExtras(b);
+            startActivity(intent)}
     }
 
     fun getmainlistdata()
