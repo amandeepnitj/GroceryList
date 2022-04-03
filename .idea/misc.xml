@@ -8,9 +8,11 @@
         <entry key="app/src/main/res/font/poppins_font_family.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/activity_create_list.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/activity_detail_view.xml" value="0.2328125" />
-        <entry key="app/src/main/res/layout/activity_list_view.xml" value="0.1796600341796875" />
+        <entry key="app/src/main/res/layout/activity_list_view.xml" value="0.24649658203125002" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.245355224609375" />
         <entry key="app/src/main/res/layout/activity_spashscreen.xml" value="0.29583333333333334" />
+        <entry key="app/src/main/res/layout/listviewitem.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/mainlist.xml" value="0.246875" />
       </map>
     </option>
   </component>

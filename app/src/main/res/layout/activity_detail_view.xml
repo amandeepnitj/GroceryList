@@ -16,6 +16,7 @@ tools:context=".DetailView">
         android:layout_weight=".06"
         >
         <ImageButton
+            android:id="@+id/detail_backbutton"
             android:layout_width="0dp"
             android:layout_weight="0.13"
             android:layout_height="match_parent"
@@ -124,6 +125,7 @@ tools:context=".DetailView">
         android:layout_weight=".06"
         >
         <TextView
+            android:id="@+id/detail_done"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -138,6 +140,7 @@ tools:context=".DetailView">
         </TextView>
 
         <TextView
+            android:id="@+id/detail_listview"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"

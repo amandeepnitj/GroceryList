@@ -16,7 +16,7 @@ class Splashscreen : AppCompatActivity() {
 
 
 
-                    val intent = Intent(this@Splashscreen, MainActivity::class.java)
+                    val intent = Intent(this@Splashscreen, CreateList::class.java)
                     startActivity(intent)
                     finish()
 
