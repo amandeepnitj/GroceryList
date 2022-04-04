@@ -38,6 +38,17 @@ class MainActivity : AppCompatActivity() {
             b.putString("listname",it);
             intent.putExtras(b);
             startActivity(intent)}
+
+
+
+        adapter?.setOnOptionbuttonClick {
+            Toast.makeText(this,it+ " option button clicked",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@MainActivity, EditList::class.java)
+            var b :Bundle = Bundle();
+            b.putString("listname",it);
+            intent.putExtras(b);
+            startActivity(intent)
+        }
     }
 
     fun getmainlistdata()

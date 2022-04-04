@@ -4,12 +4,15 @@ import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MainListViewAdapter : RecyclerView.Adapter<MainListViewAdapter.MainListViewHolder>() {
         private var mainlist: ArrayList<String>  = ArrayList();
         private var onClickItem:((String)-> Unit)?= null
+    private var onClickOptionButton: ((String)-> Unit) ?= null
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainListViewHolder = MainListViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.mainlist,parent,false)
@@ -21,10 +24,16 @@ class MainListViewAdapter : RecyclerView.Adapter<MainListViewAdapter.MainListVie
 
     }
 
+    fun setOnOptionbuttonClick(callback: (String) -> Unit)
+    {
+        this.onClickOptionButton = callback;
+    }
+
     override fun onBindViewHolder(holder: MainListViewHolder, position: Int) {
         val item = mainlist[position];
         holder.bindView(item)
         holder.itemView.setOnClickListener{onClickItem?.invoke(item)}
+        holder.optionButton.setOnClickListener{onClickOptionButton?.invoke(item)}
 
     }
 
@@ -39,6 +48,7 @@ class MainListViewAdapter : RecyclerView.Adapter<MainListViewAdapter.MainListVie
 
     class MainListViewHolder(var view : View) :RecyclerView.ViewHolder(view){
         private var listnameitem = view.findViewById<TextView>(R.id.listnameitem);
+        var optionButton : ImageView = view.findViewById(R.id.threedots);
 
         fun bindView(value : String)
         {

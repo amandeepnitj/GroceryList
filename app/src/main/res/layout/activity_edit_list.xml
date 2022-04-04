@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".EditList"
+android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight=".1"
+    >
+    <ImageButton
+        android:id="@+id/editlist_backbutton"
+        android:layout_width="0dp"
+        android:layout_weight="0.13"
+        android:layout_height="match_parent"
+        android:src="@drawable/back"
+        android:background="#f7511f"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="Edit List"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="#f7511f">
+
+    </TextView>
+</LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40sp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:text="Name :"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/edit_listname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="list name"
+            android:textSize="15dp"
+            />
+        <ImageView
+            android:id="@+id/deletelist_button"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight=".2"
+            android:src="@drawable/trash"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+
+
+
+
+    <!--            android:layout_weight="1"-->
+
+
+
+
+
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Items"
+        android:textSize="24sp"
+        android:textAlignment="center"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".8">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/editlist_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16sp"/>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70sp">
+
+        <EditText
+            android:id="@+id/editlist_itemname"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="Item Name"
+            android:layout_weight="1"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/editlist_quantity"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="Quantity"
+            android:layout_weight=".7"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/editlist_cost"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="Price"
+            android:layout_weight=".7"
+            android:inputType="number"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+    <ImageView
+        android:id="@+id/editlist_addbutton"
+        android:layout_marginTop="5sp"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:src="@drawable/add"
+        android:background="#f7511f"/>
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight=".09"
+    >
+    <TextView
+        android:id="@+id/editlist_done"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Done"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:background="#808080">
+
+    </TextView>
+
+
+</LinearLayout>
+
+</LinearLayout>

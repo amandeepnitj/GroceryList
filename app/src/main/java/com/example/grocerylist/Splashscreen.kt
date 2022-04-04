@@ -8,7 +8,7 @@ import android.os.CountDownTimer
 class Splashscreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_spashscreen)
+        setContentView(R.layout.activity_splashscreen)
         val timer = object: CountDownTimer(1000, 2000) {
             override fun onTick(millisUntilFinished: Long) {}
 
@@ -16,7 +16,7 @@ class Splashscreen : AppCompatActivity() {
 
 
 
-                    val intent = Intent(this@Splashscreen, CreateList::class.java)
+                    val intent = Intent(this@Splashscreen, MainActivity::class.java)
                     startActivity(intent)
                     finish()
 
