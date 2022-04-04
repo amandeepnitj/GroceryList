@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class MainListViewAdapter : RecyclerView.Adapter<MainListViewAdapter.MainListViewHolder>() {
         private var mainlist: ArrayList<String>  = ArrayList();
         private var onClickItem:((String)-> Unit)?= null
-    private var onClickOptionButton: ((String)-> Unit) ?= null
+        private var onClickOptionButton: ((String)-> Unit) ?= null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainListViewHolder = MainListViewHolder(

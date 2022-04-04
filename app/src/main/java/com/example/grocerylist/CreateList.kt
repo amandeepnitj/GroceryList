@@ -36,9 +36,6 @@ class CreateList : AppCompatActivity() {
             adddata();
         }
 
-
-
-
     }
     fun adddata()
     {

@@ -3,12 +3,13 @@ package com.example.grocerylist
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class EditListViewAdapter : RecyclerView.Adapter<EditListViewAdapter.listviewHolder>(){
-    private var list : ArrayList<ListModel> = ArrayList();
-
+     var list : ArrayList<ListModel> = ArrayList();
+    private var onClickDeleteButton : ((ListModel)->Unit) ? = null;
 
 
 
@@ -17,13 +18,26 @@ class EditListViewAdapter : RecyclerView.Adapter<EditListViewAdapter.listviewHol
     )
 
 
+    fun setOnClickDeleteButton(callback : (ListModel)-> Unit)
+    {
+        this.onClickDeleteButton = callback;
+    }
+
+
     override fun onBindViewHolder(holder: listviewHolder, position: Int) {
         val item = list[position];
         holder.bindView(item);
+        holder.deletebutton.setOnClickListener{onClickDeleteButton?.invoke(item)};
     }
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    fun updateList(items : ArrayList<ListModel>)
+    {
+        this.list = items;
+        notifyDataSetChanged()
     }
 
     fun additems(items: ArrayList<ListModel>)
@@ -37,6 +51,7 @@ class EditListViewAdapter : RecyclerView.Adapter<EditListViewAdapter.listviewHol
         private var itemname = view.findViewById<TextView>(R.id.itemname);
         private var quantity =  view.findViewById<TextView>(R.id.quantity);
         private var cost = view.findViewById<TextView>(R.id.cost);
+        var deletebutton = view.findViewById<ImageView>(R.id.removebutton);
 
         fun bindView(listModel: ListModel)
         {

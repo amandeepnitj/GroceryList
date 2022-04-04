@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -20,7 +17,8 @@ class EditList : AppCompatActivity() {
     private lateinit var cost : EditText
     private lateinit var addbutton : ImageView;
     private lateinit var sqLitehelper: SQLitehelper;
-    private lateinit var listname_edittext : EditText
+    private lateinit var listname_edittext : EditText;
+    var mylistname = "" ;
 
     private var adapter: EditListViewAdapter? = null;
 
@@ -29,6 +27,11 @@ class EditList : AppCompatActivity() {
         setContentView(R.layout.activity_edit_list)
 
         findViewById<ImageButton>(R.id.editlist_backbutton).setOnClickListener{
+            val intent = Intent(this@EditList, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<TextView>(R.id.editlist_done).setOnClickListener{
             val intent = Intent(this@EditList, MainActivity::class.java)
             startActivity(intent)
         }
@@ -43,6 +46,7 @@ class EditList : AppCompatActivity() {
         if(b!= null)
         {
             value = b.getString("listname").toString();
+            mylistname =value;
 
         }
         listname_edittext.setText(value);
@@ -51,7 +55,33 @@ class EditList : AppCompatActivity() {
 
         addbutton.setOnClickListener{
             adddata();
-            getdata(value)
+            val intent = Intent(this@EditList, EditList::class.java)
+            var b :Bundle = Bundle();
+            b.putString("listname",value);
+            intent.putExtras(b);
+            startActivity(intent)
+
+
+
+
+        }
+        deletelist_button.setOnClickListener()
+        {
+            Toast.makeText(this,"  delete button clicked",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@EditList, MainActivity::class.java)
+            sqLitehelper.deleteWholeList(value);
+            startActivity(intent)
+        }
+
+
+        adapter?.setOnClickDeleteButton {
+            Toast.makeText(this,it.id.toString()+ " individual delete button clicked",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@EditList, EditList::class.java)
+            sqLitehelper.deleteItem(it.id);
+            var b :Bundle = Bundle();
+            b.putString("listname",it.listname);
+            intent.putExtras(b);
+            startActivity(intent)
         }
 
 
@@ -117,7 +147,7 @@ class EditList : AppCompatActivity() {
     {
 
         val listdata: ArrayList<ListModel> = sqLitehelper.getallData(value);
-        Log.e("pppp","${listdata.size}")
+        Log.e("pppp_get data updated","${listdata.size}")
         adapter?.additems(listdata)
     }
 }

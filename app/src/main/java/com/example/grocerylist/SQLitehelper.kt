@@ -149,5 +149,33 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
 
     }
 
+    fun deleteItem(id :Int): Int
+    {
+        val db =this.writableDatabase;
+        val contentValues = ContentValues();
+
+        contentValues.put(ID,id);
+
+        val success = db.delete(TABLE,"id=$id",null);
+        db.close();
+        return success;
+
+    }
+
+
+    fun deleteWholeList(listname1 :String): Int
+    {
+        val db =this.writableDatabase;
+        val contentValues = ContentValues();
+
+        contentValues.put(LIST_NAME,listname1);
+
+        val success = db.delete(TABLE, LIST_NAME+ "=?", arrayOf(listname1));
+        db.close();
+        return success;
+
+    }
+
+
 
 }
