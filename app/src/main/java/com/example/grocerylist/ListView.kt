@@ -4,14 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class ListView : AppCompatActivity() {
     private lateinit var sqLitehelper: SQLitehelper;
     private lateinit var recyclerView: RecyclerView;
+//    private lateinit var ItemListview : LinearLayout;
     private var adapter: ListviewAdapter? = null;
 
 
@@ -45,8 +45,20 @@ class ListView : AppCompatActivity() {
             value = b.getString("listname").toString();
 
         }
+        findViewById<TextView>(R.id.ListName).setText(value);
         sqLitehelper = SQLitehelper(this);
         getdata(value);
+
+
+        adapter?.setOnClickItemlistview{
+            Toast.makeText(this,it.id.toString()  +"  Linear View clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@ListView, ListView::class.java)
+            sqLitehelper.itemstatuschange(it.id);
+            var b :Bundle = Bundle();
+            b.putString("listname",it.listname);
+            intent.putExtras(b);
+            startActivity(intent)
+        }
 
     }
     fun getdata(value: String)
@@ -67,6 +79,7 @@ class ListView : AppCompatActivity() {
 //        quantity = findViewById(R.id.quantity);
 //        cost = findViewById(R.id.cost);
         recyclerView = findViewById(R.id.list_recyclerview)
+
     }
 
     fun initRecyclerview()

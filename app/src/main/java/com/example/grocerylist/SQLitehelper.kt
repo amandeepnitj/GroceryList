@@ -176,6 +176,84 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
 
     }
 
+    @SuppressLint("Range")
+    fun getparticularitem(id: Int) : ListModel
+    {
+        var listmodel : ListModel = ListModel();
+        val selectquery = "SELECT * FROM " + TABLE + " where id = ? ";
+        val db = this.readableDatabase;
+
+        val cursor : Cursor?
+
+        try{
+            cursor = db.rawQuery(selectquery, arrayOf(id.toString()));
+
+
+        }
+        catch(e: Exception)
+        {
+            e.printStackTrace();
+            db.execSQL(selectquery);
+            return listmodel;
+
+        }
+
+        var id :Int;
+        var listname : String;
+        var itemname : String;
+        var quanity : Int;
+        var cost : Float;
+        var bought : Int;
+
+        if(cursor.moveToFirst())
+        {
+            do{
+                id = cursor.getInt(cursor.getColumnIndex("id"));
+                listname  = cursor.getString(cursor.getColumnIndex("listname"));
+                itemname = cursor.getString(cursor.getColumnIndex("itemname"));
+                quanity = cursor.getInt(cursor.getColumnIndex("quantity"));
+                cost = cursor.getFloat(cursor.getColumnIndex("cost"));
+                bought = cursor.getInt(cursor.getColumnIndex("bought"));
+                val list1 = ListModel(id= id,listname =listname,itemname =  itemname, quantity =  quanity, cost = cost, bought = bought );
+                listmodel =list1;
+
+            }
+            while(cursor.moveToNext())
+        }
+
+        return listmodel;
+
+
+    }
+
+    fun itemstatuschange(id : Int) :Int
+    {
+        var list = getparticularitem(id);
+        val db = this.writableDatabase;
+        val contentValues =ContentValues();
+        contentValues.put(ID,list.id);
+        contentValues.put(LIST_NAME,list.listname);
+        contentValues.put(ITEM_NAME,list.itemname);
+        contentValues.put(QUANTITY,list.quantity);
+        contentValues.put(COST,list.cost);
+        if(list.bought==0)
+        {
+            list.bought =1;
+        }
+        else
+        {
+            list.bought =0;
+        }
+        contentValues.put(BOUGHT,list.bought);
+
+        val success = db.update(TABLE,contentValues,"id=?", arrayOf(id.toString()));
+        db.close();
+        return success;
+
+
+
+    }
+
 
 
 }

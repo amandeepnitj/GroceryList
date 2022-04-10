@@ -9,7 +9,7 @@ class Splashscreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
-        val timer = object: CountDownTimer(1000, 2000) {
+        val timer = object: CountDownTimer(1000, 5000) {
             override fun onTick(millisUntilFinished: Long) {}
 
             override fun onFinish() {

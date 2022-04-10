@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/bordermain.xml" value="0.2505" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2085" />
         <entry key="app/src/main/res/font/poppins_font_family.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/activity_create_list.xml" value="0.246875" />
@@ -16,6 +17,7 @@
         <entry key="app/src/main/res/layout/edititems_listview.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/listviewitem.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/mainlist.xml" value="0.246875" />
+        <entry key="app/src/main/res/xml/root_preferences.xml" value="0.246875" />
       </map>
     </option>
   </component>

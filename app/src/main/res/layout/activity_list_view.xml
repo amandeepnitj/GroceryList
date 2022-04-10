@@ -24,6 +24,7 @@
             android:background="#f7511f"/>
 
         <TextView
+            android:id="@+id/ListName"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Sobeys List"

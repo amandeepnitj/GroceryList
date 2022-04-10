@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:background="@drawable/bordermain"
+    android:id="@+id/Item_listview"
 
     android:layout_margin="10sp"
 
@@ -19,6 +20,7 @@
         android:textSize="23sp"/>
 
     <TextView
+        android:id="@+id/q"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:text="Quantity : "
@@ -38,6 +40,7 @@
 
 
     <TextView
+        android:id="@+id/d"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:text="$"
