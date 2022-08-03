@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ldmode"
+        android:title="Light/Dark Mode"/>
+    <item
+        android:id="@+id/importdata"
+        android:title="Import Data"/>
+    <item
+        android:id="@+id/exportdata"
+        android:title="Export Data"/>
+    <item
+        android:id="@+id/favouritelist"
+        android:title="Favourite List"/>
+</menu>

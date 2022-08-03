@@ -9,7 +9,10 @@ data class ListModel(
     var itemname: String = "",
     var quantity: Int = 0,
     var cost: Float = 0f,
-    var bought: Int = 0
+    var bought: Int = 0,
+    var storename : String ="",
+    var grocerydate : String ="",
+    var favourite : Int = 0
 
 ) {
     companion object{

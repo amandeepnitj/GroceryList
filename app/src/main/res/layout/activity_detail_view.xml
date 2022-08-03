@@ -21,7 +21,7 @@ tools:context=".DetailView">
             android:layout_weight="0.13"
             android:layout_height="match_parent"
             android:src="@drawable/back"
-            android:background="#f7511f"/>
+            android:background="@color/mainbackground"/>
 
         <TextView
             android:layout_width="0dp"
@@ -32,9 +32,9 @@ tools:context=".DetailView">
             android:textAlignment="center"
             android:textSize="28sp"
             android:layout_weight="1"
-            android:textColor="@color/white"
+            android:textColor="@color/textcolor"
             android:textStyle="bold"
-            android:background="#f7511f">
+            android:background="@color/mainbackground">
 
         </TextView>
     </LinearLayout>
@@ -134,8 +134,8 @@ tools:context=".DetailView">
             android:gravity="center"
             android:textAlignment="center"
             android:textSize="25sp"
-            android:textColor="@color/white"
-            android:background="#808080">
+            android:textColor="@color/textcolor"
+            android:background="@color/footercolor">
 
         </TextView>
 
@@ -149,8 +149,8 @@ tools:context=".DetailView">
             android:gravity="center"
             android:textAlignment="center"
             android:textSize="25sp"
-            android:textColor="@color/white"
-            android:background="#808080">
+            android:textColor="@color/textcolor"
+            android:background="@color/footercolor">
 
         </TextView>
     </LinearLayout>

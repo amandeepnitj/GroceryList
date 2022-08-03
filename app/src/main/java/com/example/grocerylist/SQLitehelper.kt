@@ -23,6 +23,10 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
         private const val QUANTITY = "quantity"
         private const val COST = "cost"
         private const val BOUGHT = "bought";
+        private const val STORE_NAME = "storename";
+        private const val GROCERY_DATE = "grocerydate";
+        private const val FAVOURITE = "favourite";
+
 
 
 
@@ -30,7 +34,7 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTblStatement = ("CREATE TABLE " + TABLE + "( " + ID + " INTEGER PRIMARY KEY, " + LIST_NAME + " TEXT," + ITEM_NAME + " TEXT, " + QUANTITY
-                + " INTEGER, " + COST + " REAL, "+ BOUGHT + " INTEGER )");
+                + " INTEGER, " + COST + " REAL, "+ BOUGHT + " INTEGER, "+ STORE_NAME + " TEXT, "+ GROCERY_DATE + " DATE, "+ FAVOURITE + " INTEGER  )");
         db?.execSQL(createTblStatement);
     }
 
@@ -48,6 +52,9 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
         contentValues.put(QUANTITY,list.quantity);
         contentValues.put(COST,list.cost);
         contentValues.put(BOUGHT,list.bought);
+        contentValues.put(STORE_NAME,list.storename);
+        contentValues.put(GROCERY_DATE,list.grocerydate);
+        contentValues.put(FAVOURITE,list.favourite);
 
         val success = db.insert(TABLE,null,contentValues);
         db.close();

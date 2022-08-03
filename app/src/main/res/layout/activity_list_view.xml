@@ -21,7 +21,7 @@
             android:layout_weight="0.13"
             android:layout_height="match_parent"
             android:src="@drawable/back"
-            android:background="#f7511f"/>
+            android:background="@color/mainbackground"/>
 
         <TextView
             android:id="@+id/ListName"
@@ -33,9 +33,9 @@
             android:textAlignment="center"
             android:textSize="28sp"
             android:layout_weight="1"
-            android:textColor="@color/white"
+            android:textColor="@color/textcolor"
             android:textStyle="bold"
-            android:background="#f7511f">
+            android:background="@color/mainbackground">
 
         </TextView>
     </LinearLayout>
@@ -72,6 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:text="Click on the Item to mark it bought."
+
         android:layout_weight=".09"/>
 
     <LinearLayout
@@ -89,8 +90,8 @@
             android:gravity="center"
             android:textAlignment="center"
             android:textSize="25sp"
-            android:textColor="@color/white"
-            android:background="#808080">
+            android:textColor="@color/textcolor"
+            android:background="@color/footercolor">
 
         </TextView>
 
@@ -104,8 +105,8 @@
             android:gravity="center"
 
             android:textSize="25sp"
-            android:textColor="@color/white"
-            android:background="#808080">
+            android:textColor="@color/textcolor"
+            android:background="@color/footercolor">
 
         </TextView>
     </LinearLayout>
