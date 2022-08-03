@@ -1,39 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:id="@+id/drawer_layout"
+    >
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu"
+        android:layout_gravity="start"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".06"
-        android:background="#f7511f"
+        android:background="@color/mainbackground"
         >
-        <ImageView
-            android:layout_width="0dp"
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="22dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.09"
-            android:src="@drawable/menu"
-            android:padding="5sp"
-            android:layout_marginLeft="10sp"
+            android:background="@color/mainbackground"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:navigationIcon="@drawable/menu"
+            android:id="@+id/toolbar"
             />
+<!--        <ImageView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="0.09"-->
+<!--            android:src="@drawable/menu"-->
+<!--            android:padding="5sp"-->
+<!--            android:layout_marginLeft="10sp"-->
+<!--            />-->
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Grocery List"
+            android:layout_weight="1"
+            android:background="@color/mainbackground"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
-            android:textStyle="bold"
+            android:text="Grocery List"
             android:textAlignment="center"
+            android:textColor="@color/textcolor"
+            android:textColorLink="@color/white"
             android:textSize="25sp"
-            android:layout_weight="1"
-            android:textColor="@color/white"
-            android:background="#f7511f">
+            android:textStyle="bold">
 
         </TextView>
     </LinearLayout>
@@ -55,19 +80,22 @@
         android:layout_height="0dp"
         android:layout_weight=".06"
         >
+
         <TextView
             android:id="@+id/createlist"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="+ Create List"
+            android:background="@color/mainbackground"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
+            android:text="+ Create List"
             android:textAlignment="center"
-            android:textSize="25sp"
-            android:textColor="@color/white"
-            android:background="#808080">
+            android:textColor="@color/footercolor"
+            android:textSize="25sp">
 
         </TextView>
     </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -15,8 +15,10 @@
         <entry key="app/src/main/res/layout/activity_spashscreen.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_splashscreen.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/edititems_listview.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/header.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/listviewitem.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/mainlist.xml" value="0.246875" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/xml/root_preferences.xml" value="0.246875" />
       </map>
     </option>
