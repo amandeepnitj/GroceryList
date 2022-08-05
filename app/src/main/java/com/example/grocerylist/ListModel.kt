@@ -11,7 +11,7 @@ data class ListModel(
     var cost: Float = 0f,
     var bought: Int = 0,
     var storename : String ="",
-    var grocerydate : String ="",
+    var nextgrocerydate : String ="",
     var favourite : Int = 0
 
 ) {

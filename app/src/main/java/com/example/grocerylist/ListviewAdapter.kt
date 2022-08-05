@@ -51,15 +51,17 @@ class ListviewAdapter : RecyclerView.Adapter<ListviewAdapter.Listviewholder>() {
         private var q = view.findViewById<TextView>(R.id.q);
         private var d = view.findViewById<TextView>(R.id.d);
         var Item_listview = view.findViewById<LinearLayout>(R.id.Item_listview);
+        var likebutton : ImageView = view.findViewById(R.id.likebutton);
 
 
         fun bindView(listModel: ListModel)
         {
+
             itemname.text = listModel.itemname;
             quantity.text = listModel.quantity.toString();
-            cost.text = listModel.cost.toString();
+            cost.text = (listModel.cost * listModel.quantity).toString();
 
-            if(listModel.bought ==1)
+            if(listModel.bought == 1)
             {
 //                Item_listview.setBackgroundColor(Color.GRAY)
                 itemname.setTextColor(Color.parseColor("#f7511f"))
@@ -67,6 +69,7 @@ class ListviewAdapter : RecyclerView.Adapter<ListviewAdapter.Listviewholder>() {
                 cost.setTextColor(Color.parseColor("#f7511f"))
                 q.setTextColor(Color.parseColor("#f7511f"))
                 d.setTextColor(Color.parseColor("#f7511f"))
+
 
 
             }
@@ -78,6 +81,15 @@ class ListviewAdapter : RecyclerView.Adapter<ListviewAdapter.Listviewholder>() {
                 cost.setTextColor(Color.GRAY)
                 q.setTextColor(Color.GRAY)
                 d.setTextColor(Color.GRAY)
+
+            }
+            if(listModel.favourite == 0)
+            {
+                likebutton.setImageResource(R.drawable.dislike)
+            }
+            else
+            {
+                likebutton.setImageResource(R.drawable.like)
 
             }
 

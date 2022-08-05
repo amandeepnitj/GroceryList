@@ -15,7 +15,7 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
     companion object{
         private const val DATABASE_NAME = "list.db";
 
-        private const val DATABASE_VERSION = 1;
+        private const val DATABASE_VERSION = 2;
         private const val TABLE = "listtable"
         private const val ID = "id"
         private const val LIST_NAME ="listname"
@@ -24,7 +24,7 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
         private const val COST = "cost"
         private const val BOUGHT = "bought";
         private const val STORE_NAME = "storename";
-        private const val GROCERY_DATE = "grocerydate";
+        private const val GROCERY_DATE = "nextgrocerydate";
         private const val FAVOURITE = "favourite";
 
 
@@ -53,7 +53,7 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
         contentValues.put(COST,list.cost);
         contentValues.put(BOUGHT,list.bought);
         contentValues.put(STORE_NAME,list.storename);
-        contentValues.put(GROCERY_DATE,list.grocerydate);
+        contentValues.put(GROCERY_DATE,list.nextgrocerydate);
         contentValues.put(FAVOURITE,list.favourite);
 
         val success = db.insert(TABLE,null,contentValues);
@@ -90,6 +90,9 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
         var quanity : Int;
         var cost : Float;
         var bought : Int;
+        var favourite :Int;
+        var storename : String;
+        var nextgrocerydate : String;
 
         if(cursor.moveToFirst())
         {
@@ -100,7 +103,11 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
                 quanity = cursor.getInt(cursor.getColumnIndex("quantity"));
                 cost = cursor.getFloat(cursor.getColumnIndex("cost"));
                 bought = cursor.getInt(cursor.getColumnIndex("bought"));
-                val list1 = ListModel(id= id,listname =listname,itemname =  itemname, quantity =  quanity, cost = cost, bought = bought );
+                favourite= cursor.getInt(cursor.getColumnIndex("favourite"));
+                storename = cursor.getString(cursor.getColumnIndex("storename"));
+                nextgrocerydate = cursor.getString(cursor.getColumnIndex("nextgrocerydate"));
+                val list1 = ListModel(id= id,listname =listname,itemname =  itemname, quantity =  quanity, cost = cost, bought = bought, storename = storename,nextgrocerydate = nextgrocerydate,favourite = favourite );
+
                 listarray.add(list1);
 
             }
@@ -211,6 +218,9 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
         var quanity : Int;
         var cost : Float;
         var bought : Int;
+        var favourite :Int;
+        var storename : String;
+        var nextgrocerydate : String;
 
         if(cursor.moveToFirst())
         {
@@ -221,7 +231,10 @@ class SQLitehelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
                 quanity = cursor.getInt(cursor.getColumnIndex("quantity"));
                 cost = cursor.getFloat(cursor.getColumnIndex("cost"));
                 bought = cursor.getInt(cursor.getColumnIndex("bought"));
-                val list1 = ListModel(id= id,listname =listname,itemname =  itemname, quantity =  quanity, cost = cost, bought = bought );
+                favourite= cursor.getInt(cursor.getColumnIndex("favourite"));
+                storename = cursor.getString(cursor.getColumnIndex("storename"));
+                nextgrocerydate = cursor.getString(cursor.getColumnIndex("nextgrocerydate"));
+                val list1 = ListModel(id= id,listname =listname,itemname =  itemname, quantity =  quanity, cost = cost, bought = bought , storename = storename,nextgrocerydate = nextgrocerydate,favourite = favourite );
                 listmodel =list1;
 
             }

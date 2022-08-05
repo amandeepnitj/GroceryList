@@ -10,8 +10,10 @@ class CreateList : AppCompatActivity() {
     private lateinit var itemname : EditText
     private lateinit var quantity : EditText;
     private  lateinit var cost : EditText;
+    private lateinit var nextgrocerydate : EditText;
     private lateinit var addbutton :ImageView;
     private lateinit var sqLitehelper: SQLitehelper;
+    private lateinit var storename : EditText;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,13 +45,17 @@ class CreateList : AppCompatActivity() {
         val itemname = itemname.text.toString();
         val quantity = quantity.text.toString().toInt();
         val cost = cost.text.toString().toFloat();
-        val bought : Int = 0    
-        if(listname.isEmpty()||itemname.isEmpty()||quantity==0||cost==0f)
+        val bought : Int = 0
+        val nextgrocerydate = nextgrocerydate.text.toString();
+        val storename  = storename.text.toString();
+        val favourite : Int =0;
+
+        if(listname.isEmpty()||itemname.isEmpty()||quantity==0||cost==0f||nextgrocerydate.isEmpty()||storename.isEmpty())
         {
             Toast.makeText(this, "Please enter the data first   ", Toast.LENGTH_SHORT).show()
         }
         else{
-            val list = ListModel(listname = listname,itemname = itemname,quantity = quantity,cost = cost,bought = bought);
+            val list = ListModel(listname = listname,itemname = itemname,quantity = quantity,cost = cost,bought = bought,storename = storename,nextgrocerydate = nextgrocerydate,favourite = favourite);
             val status = sqLitehelper.insertData(list);
             if(status>-1)
             {
@@ -72,6 +78,8 @@ class CreateList : AppCompatActivity() {
         quantity = findViewById(R.id.quantity);
         cost   = findViewById(R.id.cost);
         addbutton = findViewById(R.id.addbutton);
+        nextgrocerydate = findViewById(R.id.nextgrocerydate);
+        storename = findViewById(R.id.storename);
 
     }
     fun clearFileds()
@@ -79,6 +87,8 @@ class CreateList : AppCompatActivity() {
         itemname.setText("")
         quantity.setText("");
         cost.setText("");
+        nextgrocerydate.setText("");
+        storename.setText("");
         itemname.requestFocus();
     }
 }

@@ -18,6 +18,8 @@ class EditList : AppCompatActivity() {
     private lateinit var addbutton : ImageView;
     private lateinit var sqLitehelper: SQLitehelper;
     private lateinit var listname_edittext : EditText;
+    private lateinit var storename : EditText;
+    private lateinit var nextgrocerydate : EditText;
     var mylistname = "" ;
 
     private var adapter: EditListViewAdapter? = null;
@@ -106,6 +108,8 @@ class EditList : AppCompatActivity() {
         recyclerView = findViewById(R.id.editlist_recyclerview)
         deletelist_button = findViewById(R.id.deletelist_button)
         listname_edittext = findViewById(R.id.edit_listname)
+        nextgrocerydate = findViewById(R.id.nextgrocerydate_edit);
+        storename = findViewById(R.id.storename_edit);
 
     }
     fun clearFields()
@@ -114,6 +118,8 @@ class EditList : AppCompatActivity() {
         quantity.setText("");
         cost.setText("");
         itemname.requestFocus();
+
+
     }
     fun adddata()
     {
@@ -122,24 +128,30 @@ class EditList : AppCompatActivity() {
         val quantity = quantity.text.toString().toInt();
         val cost = cost.text.toString().toFloat();
         val bought : Int = 0
-        if(listname.isEmpty()||itemname.isEmpty()||quantity==0||cost==0f)
+        val nextgrocerydate = nextgrocerydate.text.toString();
+        val storename  = storename.text.toString();
+        val favourite : Int =0;
+
+        if(listname.isEmpty()||itemname.isEmpty()||quantity==0||cost==0f||nextgrocerydate.isEmpty()||storename.isEmpty())
         {
             Toast.makeText(this, "Please enter the data first   ", Toast.LENGTH_SHORT).show()
         }
         else{
-            val list = ListModel(listname = listname,itemname = itemname,quantity = quantity,cost = cost,bought = bought);
+            val list = ListModel(listname = listname,itemname = itemname,quantity = quantity,cost = cost,bought = bought,storename = storename,nextgrocerydate = nextgrocerydate,favourite = favourite);
             val status = sqLitehelper.insertData(list);
             if(status>-1)
             {
-                Toast.makeText(this,"data inserted", Toast.LENGTH_SHORT).show();
-                clearFields();
+                Toast.makeText(this,"data inserted",Toast.LENGTH_SHORT).show();
+                clearFields()
+
             }
             else
             {
-                Toast.makeText(this, "Data is not inserted ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Data is not inserted ",Toast.LENGTH_SHORT).show();
 
             }
         }
+
 
     }
 
