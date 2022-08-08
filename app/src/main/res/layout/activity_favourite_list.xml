@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Favourite_List">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".1"
+        >
+
+
+        <TextView
+            android:id="@+id/listname_favouritelist"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Favourite List"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:layout_weight="1"
+            android:textColor="@color/textcolor"
+            android:textStyle="bold"
+            android:background="@color/mainbackground">
+
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="5sp"
+
+
+        android:orientation="vertical">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/favouritelist_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16sp"/>
+
+        <!--            android:layout_weight="1"-->
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".06"
+        >
+        <TextView
+            android:id="@+id/favourite_done"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Done"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="@color/textcolor"
+            android:background="@color/footercolor">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+</LinearLayout>

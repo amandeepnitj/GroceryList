@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class ListView : AppCompatActivity() {
     private lateinit var sqLitehelper: SQLitehelper;
     private lateinit var recyclerView: RecyclerView;
-//    private lateinit var ItemListview : LinearLayout;
+    //    private lateinit var ItemListview : LinearLayout;
     private var adapter: ListviewAdapter? = null;
 
 
@@ -54,6 +54,16 @@ class ListView : AppCompatActivity() {
             Toast.makeText(this,it.id.toString()  +"  Linear View clicked", Toast.LENGTH_SHORT).show()
             val intent = Intent(this@ListView, ListView::class.java)
             sqLitehelper.itemstatuschange(it.id);
+            var b :Bundle = Bundle();
+            b.putString("listname",it.listname);
+            intent.putExtras(b);
+            startActivity(intent)
+        }
+        adapter?.setOnClickLikeButton {
+
+            Toast.makeText(this,it.id.toString()  +"  Like button clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@ListView, ListView::class.java)
+            sqLitehelper.likestatuschange(it.id);
             var b :Bundle = Bundle();
             b.putString("listname",it.listname);
             intent.putExtras(b);

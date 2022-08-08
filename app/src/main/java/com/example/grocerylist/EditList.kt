@@ -49,10 +49,16 @@ class EditList : AppCompatActivity() {
         {
             value = b.getString("listname").toString();
             mylistname =value;
+            var list = sqLitehelper.getparticularitemwithlistname(value);
+            storename.setText(list.storename);
+            nextgrocerydate.setText(list.nextgrocerydate)
+
+
 
         }
         listname_edittext.setText(value);
         getdata(value);
+
 
 
         addbutton.setOnClickListener{

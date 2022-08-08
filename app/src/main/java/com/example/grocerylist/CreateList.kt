@@ -87,8 +87,8 @@ class CreateList : AppCompatActivity() {
         itemname.setText("")
         quantity.setText("");
         cost.setText("");
-        nextgrocerydate.setText("");
-        storename.setText("");
+
+
         itemname.requestFocus();
     }
 }

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 class ListviewAdapter : RecyclerView.Adapter<ListviewAdapter.Listviewholder>() {
     private var list : ArrayList<ListModel> = ArrayList();
     private var onClickItemlistview : ((ListModel)->Unit) ? = null;
+    private var onClickLikeButton: ((ListModel)-> Unit) ?= null
 
 
     fun addItems(items : ArrayList<ListModel>)
@@ -25,6 +26,11 @@ class ListviewAdapter : RecyclerView.Adapter<ListviewAdapter.Listviewholder>() {
         this.onClickItemlistview = callback;
     }
 
+    fun setOnClickLikeButton(callback : (ListModel)-> Unit)
+    {
+        this.onClickLikeButton = callback;
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = Listviewholder(
         LayoutInflater.from(parent.context).inflate(R.layout.listviewitem,parent,false)
@@ -34,6 +40,7 @@ class ListviewAdapter : RecyclerView.Adapter<ListviewAdapter.Listviewholder>() {
             val item = list[position];
         holder.bindView(item);
         holder.Item_listview.setOnClickListener{onClickItemlistview?.invoke(item)};
+        holder.likebutton.setOnClickListener{onClickLikeButton?.invoke(item)}
     }
 
     override fun getItemCount(): Int {

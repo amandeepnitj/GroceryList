@@ -82,6 +82,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 />
+<!--            <DatePicker-->
+<!--                android:id="@+id/nextgrocerydate"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:datePickerMode="spinner"-->
+<!--                android:calendarViewShown="false"-->
+<!--                />-->
         </LinearLayout>
 
 
@@ -100,6 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 />
+
         </LinearLayout>
 
 

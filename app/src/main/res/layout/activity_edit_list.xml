@@ -184,7 +184,7 @@ android:orientation="vertical">
         android:layout_marginTop="5sp"
         android:layout_width="match_parent"
         android:layout_height="40sp"
-        android:src="@drawable/add"
+        android:src="@drawable/addition"
         android:background="@color/mainbackground"/>
 
 

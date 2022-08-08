@@ -5,20 +5,27 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/bordermain.xml" value="0.2505" />
+        <entry key="app/src/main/res/drawable/gradient.xml" value="0.2475" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2085" />
         <entry key="app/src/main/res/font/poppins_font_family.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/activity_create_list.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/activity_detail_view.xml" value="0.2328125" />
         <entry key="app/src/main/res/layout/activity_edit_list.xml" value="0.2328125" />
+        <entry key="app/src/main/res/layout/activity_favourite_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_list_view.xml" value="0.24649658203125002" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.245355224609375" />
         <entry key="app/src/main/res/layout/activity_spashscreen.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/activity_splashscreen.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/app_widget.xml" value="0.13796296296296295" />
+        <entry key="app/src/main/res/layout/demo_app_widget.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/edititems_listview.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/example_widget_item.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/header.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/listviewitem.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/mainlist.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/stack_item.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/xml/provider_paths.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/xml/root_preferences.xml" value="0.246875" />
       </map>
     </option>

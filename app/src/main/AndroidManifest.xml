@@ -2,13 +2,43 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.grocerylist">
 
+<!--    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />-->
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GroceryList">
+        android:theme="@style/Theme.GroceryList"
+        android:requestLegacyExternalStorage="true">
+        <receiver
+            android:name=".DemoAppWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/demo_app_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".Notification"
+            android:enabled="true" />
+
+        <service
+            android:name=".DemoWidgetStackService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <activity
+            android:name=".Favourite_List"
+            android:exported="false" />
         <activity
             android:name=".EditList"
             android:exported="false" />
@@ -39,6 +69,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        //permissions for file write
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.grocerylist.MainActivity"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+            />
     </application>
 
 </manifest>
