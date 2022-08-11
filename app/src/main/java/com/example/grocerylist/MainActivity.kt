@@ -166,30 +166,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         var id = item.itemId;
-        if(id == R.id.ldmode)
-        {
-            Log.d("navigation","Mode changed")
-            if(isNightModeOn)
-            {
+        if(id == R.id.ldmode) {
+            Log.d("navigation", "Mode changed")
+            if (isNightModeOn) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                sharedprefEditor.putBoolean("NightMode",false);
+                sharedprefEditor.putBoolean("NightMode", false);
                 sharedprefEditor.apply();
-            }
-            else
-            {
+            } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                sharedprefEditor.putBoolean("NightMode",true);
+                sharedprefEditor.putBoolean("NightMode", true);
                 sharedprefEditor.apply();
             }
-
-        }
-        else if(id == R.id.importdata)
-        {
-            openfilechooser()
-
-            Log.d("navigation","Data imported")
-
-
 
         }
         else if(id == R.id.exportdata)

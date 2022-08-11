@@ -4,9 +4,6 @@
         android:id="@+id/ldmode"
         android:title="Light/Dark Mode"/>
     <item
-        android:id="@+id/importdata"
-        android:title="Import Data"/>
-    <item
         android:id="@+id/exportdata"
         android:title="Export Data"/>
     <item

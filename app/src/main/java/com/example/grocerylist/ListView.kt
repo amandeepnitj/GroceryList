@@ -32,10 +32,7 @@ class ListView : AppCompatActivity() {
             startActivity(intent)
         }
 
-        findViewById<TextView>(R.id.detailview).setOnClickListener{
-            val intent = Intent(this@ListView, DetailView::class.java)
-            startActivity(intent)
-        }
+
         initView();
         initRecyclerview();
         var b : Bundle? = intent.extras;

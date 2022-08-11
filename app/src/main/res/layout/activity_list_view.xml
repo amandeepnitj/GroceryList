@@ -95,20 +95,7 @@
 
         </TextView>
 
-        <TextView
-            android:id="@+id/detailview"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="Detail View"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center"
 
-            android:textSize="25sp"
-            android:textColor="@color/textcolor"
-            android:background="@color/footercolor">
-
-        </TextView>
     </LinearLayout>
 
 </LinearLayout>
